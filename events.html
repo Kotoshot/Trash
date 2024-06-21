@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название партии - Мероприятия</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-lang="ru">Главная</a></li>
+                <li><a href="about.html" data-lang="ru">О партии</a></li>
+                <li><a href="program.html" data-lang="ru">Программа</a></li>
+                <li><a href="news.html" data-lang="ru">Новости</a></li>
+                <li><a href="events.html" data-lang="ru">Мероприятия</a></li>
+                <li><a href="team.html" data-lang="ru">Команда</a></li>
+                <li><a href="contact.html" data-lang="ru">Контакты</a></li>
+                <li><a href="#" data-lang="en">English</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="events">
+        <div class="container">
+            <h2 data-lang="ru">Предстоящие мероприятия</h2>
+            <h2 data-lang="en" style="display:none">Upcoming Events</h2>
+            <div class="event-item">
+                <h3 data-lang="ru">Название мероприятия 1</h3>
+                <h3 data-lang="en" style="display:none">Event Title 1</h3>
+                <p data-lang="ru">Описание мероприятия 1.</p>
+                <p data-lang="en" style="display:none">Description of event 1.</p>
+                <p data-lang="ru">Дата: ДД.ММ.ГГГГ</p>
+                <p data-lang="en" style="display:none">Date: DD.MM.YYYY</p>
+                <p data-lang="ru">Время: ЧЧ:ММ</p>
+                <p data-lang="en" style="display:none">Time: HH:MM</p>
+                <p data-lang="ru">Место: Адрес места проведения</p>
+                <p data-lang="en" style="display:none">Location: Venue address</p>
+            </div>
+            <div class="event-item">
+                <h3 data-lang="ru">Название мероприятия 2</h3>
+                <h3 data-lang="en" style="display:none">Event Title 2</h3>
+                <p data-lang="ru">Описание мероприятия 2.</p>
+                <p data-lang="en" style="display:none">Description of event 2.</p>
+                <p data-lang="ru">Дата: ДД.ММ.ГГГГ</p>
+                <p data-lang="en" style="display:none">Date: DD.MM.YYYY</p>
+                <p data-lang="ru">Время: ЧЧ:ММ</p>
+                <p data-lang="en" style="display:none">Time: HH:MM</p>
+                <p data-lang="ru">Место: Адрес места проведения</p>
+                <p data-lang="en" style="display:none">Location: Venue address</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-lang="ru">&copy; 2024 Название партии. Все права защищены.</p>
+            <p data-lang="en" style="display:none">&copy; 2024 Party Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('nav a[data-lang]').click(function(e) {
+                e.preventDefault();
+                var lang = $(this).attr('data-lang');
+                
+                $('[data-lang]').each(function() {
+                    $(this).hide();
+                });
+
+                $('[data-lang="' + lang + '"]').each(function() {
+                    $(this).show();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

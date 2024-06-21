@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Название партии - Главная</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-lang="ru">Главная</a></li>
+                <li><a href="about.html" data-lang="ru">О партии</a></li>
+                <li><a href="program.html" data-lang="ru">Программа</a></li>
+                <li><a href="news.html" data-lang="ru">Новости</a></li>
+                <li><a href="events.html" data-lang="ru">Мероприятия</a></li>
+                <li><a href="team.html" data-lang="ru">Команда</a></li>
+                <li><a href="contact.html" data-lang="ru">Контакты</a></li>
+                <li><a href="#" data-lang="en">English</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-lang="ru">Добро пожаловать в нашу партию!</h1>
+            <h1 data-lang="en" style="display:none">Welcome to our party!</h1>
+            <p data-lang="ru">Краткое описание и призыв к действию.</p>
+            <p data-lang="en" style="display:none">Brief description and call to action.</p>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2 data-lang="ru">О нашей партии</h2>
+            <h2 data-lang="en" style="display:none">About our party</h2>
+            <p data-lang="ru">Длинное описание целей и принципов партии.</p>
+            <p data-lang="en" style="display:none">Long description of party goals and principles.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-lang="ru">&copy; 2024 Название партии. Все права защищены.</p>
+            <p data-lang="en" style="display:none">&copy; 2024 Party Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // JavaScript для переключения языков
+        $(document).ready(function() {
+            // При клике на ссылку с атрибутом data-lang
+            $('nav a[data-lang]').click(function(e) {
+                e.preventDefault();
+                var lang = $(this).attr('data-lang');
+                
+                // Скрыть все элементы с атрибутом data-lang
+                $('[data-lang]').each(function() {
+                    $(this).hide();
+                });
+
+                // Показать элементы с текущим языком
+                $('[data-lang="' + lang + '"]').each(function() {
+                    $(this).show();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
